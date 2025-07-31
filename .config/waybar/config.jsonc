@@ -1,0 +1,128 @@
+[{
+    "layer": "top",
+    "position": "top",
+    //"height": 30,
+    //"width": 1280,
+    "spacing": 4,
+    
+    "modules-left": [
+        "wlr/taskbar"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "backlight",
+        "pulseaudio"
+    ],
+
+    "wlr/taskbar": {
+        "all-outputs" : true,
+        "icon-size" : 20,
+        "tooltip" : true,
+        "tooltip-format" : "{name}",
+        "format" : "{icon}",
+        "sort-by-app-id" : true,
+        "on-click" : "minimize-raise",
+        "on-click-right" : "close"
+    },
+
+    "hyprland/workspaces" : {
+        "format" : " {icon}{windows} ",
+        "sort-by" : "number",
+        "format-icons" : {
+            "1" : "\u4e00",
+            "2" : "\u4e8c",
+            "3" : "\u4e09",
+            "4" : "\u56db",
+            "5" : "\u4e94",
+            "6" : "\u516d",
+            "7" : "\u4e03",
+            "8" : "\u516b",
+            "9" : "\u4e5d",
+            "10" :"\u5341",
+            "default" : "\u4ebf",
+            "special" : "\u4ebf",
+        },
+        "format-window-separator" : " |",
+        "window-rewrite-default" : " 󱂬",
+        "window-rewrite": {
+            "title<.*youtube.*>": " ",
+            "class<firefox>": " 󰈹",
+            "class<firefox> title<.*github.*>": " ",
+            "class<code>": " 󰨞",
+            "class<kitty>" : " ",
+            "dolphin": " ",
+	    },
+        "persistent-workspaces" : {
+            "*" : 5
+        }
+    },
+
+    "pulseaudio" : {
+        "format" : "{volume}% | {icon}",
+        "format-bluetooth" : "{volume}% | 󰂯 {icon}",
+        "format-muted" : "󰖁",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip" : false,
+        "scroll-step" : 10,
+        "on-click": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
+    },
+
+    "backlight": {
+        "device" : "intel_backlight",
+        "format" : "{percent}% | {icon}",
+        "format-icons" : [ "󰃜", "󰃛", "󰃚" ],
+    }
+    
+},
+{
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 4,
+
+    "modules-right": [
+        "network",
+        "battery",
+        "hyprland/language",
+        "clock",
+    ],
+   
+    "clock": {
+        "interval" : 20,
+        "timezone" : "Mexico/General",
+        "tooltip" : false,
+        "format" : "{:%D %H:%M}"
+    },
+
+    "hyprland/language": {
+        "format": "Lang: {}",
+        "format-en": "EN",
+        "format-es": "ES",
+    },
+
+    "battery" : {
+        "interval": 10,
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄", 
+        "format-plugged": "{capacity}% 󰂄",
+        "states": {
+            "good": 90,
+            "warning": 30,
+            "critical": 15
+        },
+        "format-icons": [ "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+    },
+
+    "network": {
+        "interval": 10,
+        "format-wifi": "{essid} | {signalStrength}% {icon} | 󰕒 {bandwidthUpBytes} 󰇚 {bandwidthDownBytes}",
+        "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
+        "format-disconnected": "󰤮"
+    }
+
+}]

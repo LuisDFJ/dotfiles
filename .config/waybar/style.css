@@ -1,0 +1,142 @@
+@define-color bar-color      rgba(34, 40, 49,0.4);     /* bar */
+@define-color tab-background rgba(57, 62, 70,0.8);     /* button bg */
+@define-color tab-color      rgba(223, 208, 184,1);    /* button */
+@define-color hov-background rgba(223, 208, 184,1);    /* hover bg */
+@define-color sel-background rgba(223, 208, 184,0.6);  /* active bg */
+@define-color sel-color      rgba(34, 40, 49,1);       /* active */
+@define-color gen-color      rgba(148, 137, 121,1);    /* general */
+@define-color gen-background rgba(34, 40, 49,0.6);     /* general bg */
+
+
+* {
+    font-family: 'NerdFontSymbols', monospace;
+    font-size: 12px;
+    min-height: 0;
+    border: none;
+}
+
+#taskbar button{
+    margin: 0px 5px;
+    border-radius: 10px;
+}
+
+#taskbar button.active {
+    background-color: @sel-background;
+}
+
+#taskbar button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background-color: @hov-background;
+}
+
+#waybar {
+    background-color: @bar-color;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+#workspaces {
+    font-family:  "Noto JP";
+    border: none;
+    box-shadow: none;
+    border-radius: 15;
+    padding: 2px 1px;
+    background-color: @gen-background;
+}
+
+#workspaces button {
+    all: initial;
+
+    transition-property: background-color;
+    transition-duration: 1.0s;
+    
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+
+    padding: 6px 15px;
+    margin: 0px 5px;
+    
+    border-radius: 15px;
+
+    background-color: @tab-background;
+    color: @tab-color;
+}
+
+#workspaces button.active {
+    color: @sel-color;
+    background-color: @sel-background;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: @sel-color;
+    background-color: @hov-background;
+}
+
+#clock {
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;
+}
+
+#language {
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;
+}
+
+#battery {
+    transition-property: color;
+    transition-duration: 2.0s;
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;
+}
+
+#battery.critical {
+    color: red;
+}
+
+#battery.warning {
+    color: yellow;
+}
+
+#battery.plugged {
+    color: green;
+}
+
+#battery.charging {
+    color: green;
+}
+
+#network {
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;
+}
+
+#pulseaudio {
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;
+}
+
+#backlight {
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;   
+}
