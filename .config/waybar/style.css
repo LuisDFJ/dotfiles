@@ -156,3 +156,10 @@
     padding: 2px 20px;
     margin: 0px 10px;   
 }
+
+#window {
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;   
+}
