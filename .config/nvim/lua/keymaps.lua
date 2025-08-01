@@ -4,6 +4,7 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 map('n', '<leader>e', ':NvimTreeToggle<Enter>' )
+map('n', '<leader>t', ':NvimTreeFocus<Enter>' )
 
 map( 'n', '<A-,>', ':BufferPrevious<CR>' )
 map( 'n', '<A-.>', ':BufferNext<CR>' )

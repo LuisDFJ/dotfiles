@@ -140,3 +140,19 @@
     padding: 2px 20px;
     margin: 0px 10px;   
 }
+
+#cpu {
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;   
+}
+
+#memory {
+    background-color: @gen-background;
+    color: @gen-color;
+    border-radius: 5px;
+    padding: 2px 20px;
+    margin: 0px 10px;   
+}
