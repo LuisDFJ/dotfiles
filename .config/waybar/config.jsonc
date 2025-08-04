@@ -51,11 +51,11 @@
             "class<firefox>": " 󰈹",
             "class<firefox> title<.*github.*>": " ",
             "class<code>": " 󰨞",
+            "title<.*nvim.*>": " ",
+            "title<.*yazi.*>": " ",
             "class<kitty>" : " ",
             "dolphin": " ",
-            "title<.*yazi.*>": " ",
             "class<spotify>": " ",
-            "title<.*nvim.*>": " ",
 	    },
         "persistent-workspaces" : {
             "*" : 5

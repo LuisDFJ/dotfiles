@@ -7,13 +7,18 @@ return {
     config = function ()
         require('nvim-tree').setup({
             view = {
-                width = "50%",
+                width = "25%",
             },
             renderer = {
                 group_empty = true,
             },
             filters = {
                 dotfiles = false,
+            },
+            git = {
+                enable = true,
+                ignore = false,
+                timeout = 500
             }
         })
     end

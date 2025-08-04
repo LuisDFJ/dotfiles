@@ -11,5 +11,6 @@ return {
 		nvim_lsp.pyright.setup{capabilities = capabilities, root_dir = util.root_pattern('pyproject.toml', 'pyrightconfig.json', '.git') }
 		nvim_lsp.lua_ls.setup{capabilities = capabilities}
         nvim_lsp.clangd.setup{capabilities = capabilities}
+
 	end
 }
