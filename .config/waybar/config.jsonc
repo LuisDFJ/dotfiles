@@ -2,31 +2,22 @@
     "reload_style_on_change": true,
     "layer": "top",
     "position": "top",
-    //"height": 30,
-    //"width": 1280,
+
     "spacing": 4,
     
     "modules-left": [
-        "wlr/taskbar"
+        "cpu",
+        "memory",
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "network",
         "backlight",
         "pulseaudio"
     ],
 
-    "wlr/taskbar": {
-        "all-outputs" : true,
-        "icon-size" : 20,
-        "tooltip" : true,
-        "tooltip-format" : "{name}",
-        "format" : "{icon}",
-        "sort-by-app-id" : true,
-        "on-click" : "minimize-raise",
-        "on-click-right" : "close"
-    },
 
     "hyprland/workspaces" : {
         "format" : " {icon}{windows} ",
@@ -81,56 +72,8 @@
         "device" : "intel_backlight",
         "format" : "{percent}% | {icon}",
         "format-icons" : [ "󰃜", "󰃛", "󰃚" ],
-    }
-    
-},
-{
-    "reload_style_on_change": true,
-    "layer": "top",
-    "position": "bottom",
-    "spacing": 4,
-
-    "modules-right": [
-        "network",
-        "battery",
-        "hyprland/language",
-        "clock",
-    ],
-
-    "modules-left": [
-        "cpu",
-        "memory",
-    ],
-
-    "modules-center": [
-        "hyprland/window",
-    ],
-   
-    "clock": {
-        "interval" : 20,
-        "timezone" : "Mexico/General",
-        "tooltip" : false,
-        "format" : "{:%D %H:%M}"
     },
 
-    "hyprland/language": {
-        "format": "Lang: {}",
-        "format-en": "EN",
-        "format-es": "ES",
-    },
-
-    "battery" : {
-        "interval": 10,
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂄", 
-        "format-plugged": "{capacity}% 󰂄",
-        "states": {
-            "good": 90,
-            "warning": 30,
-            "critical": 15
-        },
-        "format-icons": [ "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
-    },
 
     "network": {
         "interval": 10,
@@ -160,9 +103,67 @@
         "tooltip":false,
         "format": "{used:0.1f}G/{total:0.1f}G   | {swapUsed:0.1f}/{swapTotal:0.1f} 󰓡",
     },
+    
+},
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 4,
+
+    "modules-right": [
+        "battery",
+        "hyprland/language",
+        "clock",
+    ],
+
+    "modules-left": [
+        "hyprland/window",
+    ],
+
+    "modules-center": [
+        "wlr/taskbar",
+    ],
+   
+    "clock": {
+        "interval" : 20,
+        "timezone" : "Mexico/General",
+        "tooltip" : false,
+        "format" : " {:%D %H:%M}  "
+    },
+
+    "hyprland/language": {
+        "format": "Lang: {}",
+        "format-en": "EN",
+        "format-es": "ES",
+    },
+
+    "battery" : {
+        "interval": 10,
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄", 
+        "format-plugged": "{capacity}% 󰂄",
+        "states": {
+            "good": 90,
+            "warning": 30,
+            "critical": 15
+        },
+        "format-icons": [ "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+    },
 
     "hyprland/window": {
-        "format": "{class} {title}"
-    }
+        "format": "{class} {title}, {initialClass} {initialTitle}"
+    },
+
+    "wlr/taskbar": {
+        "all-outputs" : true,
+        "icon-size" : 20,
+        "tooltip" : true,
+        "tooltip-format" : "{name}",
+        "format" : "{icon}",
+        "sort-by-app-id" : true,
+        "on-click" : "minimize-raise",
+        "on-click-right" : "close"
+    },
 
 }]
