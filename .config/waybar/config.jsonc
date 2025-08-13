@@ -83,18 +83,18 @@
     },
 
     "cpu": {
-        "interval": 10,
+        "interval": 20,
         "tooltip": false,
         "format": " {avg_frequency:0.2f} GHz | {icon0}{icon1}{icon2}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}",
         "format-icons": [
-            "<span color='#948979'>▁</span>",
-            "<span color='#948979'>▂</span>",
-            "<span color='#128912'>▃</span>",
-            "<span color='#128912'>▄</span>",
-            "<span color='#898912'>▅</span>",
-            "<span color='#898912'>▆</span>",
-            "<span color='#891212'>▇</span>",
-            "<span color='#891212'>█</span>",
+            "<span color='#e5e5e5'>▁</span>",
+            "<span color='#e5e5e5'>▂</span>",
+            "<span color='#007a3d'>▃</span>",
+            "<span color='#007a3d'>▄</span>",
+            "<span color='#FCA311'>▅</span>",
+            "<span color='#FCA311'>▆</span>",
+            "<span color='#c41e3a'>▇</span>",
+            "<span color='#c41e3a'>█</span>",
         ],
     },
 
@@ -112,6 +112,7 @@
     "spacing": 4,
 
     "modules-right": [
+        "custom/headphones",
         "battery",
         "hyprland/language",
         "clock",
@@ -164,6 +165,13 @@
         "sort-by-app-id" : true,
         "on-click" : "minimize-raise",
         "on-click-right" : "close"
+    },
+
+    "custom/headphones": {
+        "exec" : "python ~/.config/waybar/scripts/headphones_bt.py",
+        "interval" : 30,
+        "return-type" : "json",
+        "format" : "{text}"
     },
 
 }]

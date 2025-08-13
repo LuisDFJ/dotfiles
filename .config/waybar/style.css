@@ -1,5 +1,5 @@
-@define-color color-bar          rgba(155,155,155,0.0);
-@define-color color-background-0 rgba( 20, 20, 20,0.8);
+@define-color color-bar          rgba( 20, 20, 20,0.5);
+@define-color color-background-0 rgba(229,229,299,0.12);
 @define-color color-background-1 rgba( 20, 33, 61,0.8);
 @define-color color-background-2 rgba(252,163, 17,0.8);
 @define-color color-background-3 rgba(229,229,229,0.8);
@@ -7,16 +7,23 @@
 @define-color color-text-1       rgba(229,229,229,1.0);
 @define-color color-text-2       rgba(  0,  0,  0,1.0);
 @define-color color-text-3       rgba( 20, 33, 61,1.0);
+
+@define-color color-good        #007a3d;
+@define-color color-warn        #c41e3a;
+@define-color color-fatl        #c41e3a;
+
 * {
     font-family: 'NerdFontSymbols', monospace;
     font-size: 12px;
 }
 
 #taskbar {
-    border-radius: 3px;
+    border-radius: 15px;
     padding: 0px 6px;
     margin: 2px 0px;
     background-color: @color-background-0;
+    min-width: 400px;
+    min-height: 30px;
 }
 
 #taskbar button{
@@ -41,7 +48,7 @@
 
 #workspaces {
     font-family:  "Noto JP";
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 6px 8px;
     margin: 2px 0px;
     background-color: @color-background-0;
@@ -75,30 +82,32 @@
     background-color: @color-background-3;
 }
 
-#clock, #language, #battery, #network, #pulseaudio, #backlight, #cpu, #memory, #window {
+#clock, #language, #battery, #network, #pulseaudio, #backlight, #cpu, #memory, #window, #custom-headphones {
     transition-property: color;
     transition-duration: 1.0s;
 
     background-color: @color-background-0;
     color: @color-text-0;
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 0px 10px;
     margin: 3px 8px;
+    min-height: 30px;
+    min-width: 50px;
 }
 
-#battery.critical {
-    color: red;
+#battery.critical, #custom-headphones.critical {
+    color: @color-fatl;
 }
 
-#battery.warning {
-    color: yellow;
+#battery.warning, #custom-headphones.warning {
+    color: @color-warn;
 }
 
 #battery.plugged {
-    color: green;
+    color: @color-good;
 }
 
 #battery.charging {
-    color: green;
+    color: @color-good;
 }
 
