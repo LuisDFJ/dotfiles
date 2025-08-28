@@ -1,0 +1,3 @@
+resvg-debug
+yay
+yay-debug

@@ -15,5 +15,6 @@ if [ "$TERM" = "xterm-kitty" ]; then
     export BUDS_MAC_ADDRESS="$(bluetoothctl devices | grep "Galaxy Buds Pro (909E)" | awk '{print $2}')"
     alias buds-connect='bluetoothctl connect "$BUDS_MAC_ADDRESS"'
     alias cfg-dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles-git/ --work-tree=$HOME'
+    alias get-idf='. ~/workspace/esp/esp-idf/export.sh'
     fastfetch
 fi
