@@ -37,3 +37,9 @@ map( 'n', '<leader>i', vim.lsp.buf.signature_help, opts )
 
 map( 'n', '<C-s>', ':write<CR>', opts )
 map( 'n', '<C-x>', ':q<CR>', opts )
+
+map( 'n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true } )
+map( 'n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true } )
+
+map( 'v', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true } )
+map( 'v', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true } )

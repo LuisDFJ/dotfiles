@@ -140,7 +140,7 @@
     },
 
     "battery" : {
-        "interval": 10,
+        "interval": 2,
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄", 
         "format-plugged": "{capacity}% 󰂄",
@@ -169,7 +169,7 @@
 
     "custom/headphones": {
         "exec" : "python ~/.config/waybar/scripts/headphones_bt.py",
-        "interval" : 30,
+        "interval" : 10,
         "return-type" : "json",
         "format" : "{text}"
     },

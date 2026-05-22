@@ -7,14 +7,21 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias hypr='Hyprland;clear'
+alias hypr='start-hyprland;clear'
+
+export HISTFILE=~/.bash_hist/.bash_history
 
 PS1='[\u@\h \W]\$ '
 
+export PATH=~/.npm-global/bin:~/.cargo/bin:$PATH
+export PICO_SDK_PATH=~/workspace/devel/pico-sdk/
+
 if [ "$TERM" = "xterm-kitty" ]; then
-    export BUDS_MAC_ADDRESS="$(bluetoothctl devices | grep "Galaxy Buds Pro (909E)" | awk '{print $2}')"
-    alias buds-connect='bluetoothctl connect "$BUDS_MAC_ADDRESS"'
+    export BUDS_MAC_ADDRESS="$(echo devices | bluetoothctl | grep -oP '(?<=Device )(.*)(?= Galaxy Buds Pro)')"
+    alias buds-connect='echo connect "$BUDS_MAC_ADDRESS" | bluetoothctl --timeout 1'
     alias cfg-dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles-git/ --work-tree=$HOME'
     alias get-idf='. ~/workspace/esp/esp-idf/export.sh'
     fastfetch
 fi
+
+

@@ -1,4 +1,13 @@
+[open]
+prepend_rules = [
+    { url = "*.obj", use = "view3d" },
+    { url = "*.stl", use = "view3d" },
+]
+
 [opener]
+view3d = [
+    { run = 'f3d %s', orphan = true, for = "unix" },
+]
 edit = [
     { run = 'nvim "$@"', block = true, for = "unix" },
 ]

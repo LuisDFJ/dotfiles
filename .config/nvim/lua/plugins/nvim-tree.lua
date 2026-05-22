@@ -1,25 +1,20 @@
 return {
     'nvim-tree/nvim-tree.lua',
-    dependencies = {
-        'nvim-tree/nvim-web-devicons',
-    },
-    version = "*",
     config = function ()
-        require('nvim-tree').setup({
+        local config = {
+            sort = {
+              sorter = "case_sensitive",
+            },
             view = {
-                width = "25%",
+              width = 30,
             },
             renderer = {
-                group_empty = true,
+              group_empty = true,
             },
             filters = {
-                dotfiles = false,
+              dotfiles = true,
             },
-            git = {
-                enable = true,
-                ignore = false,
-                timeout = 500
-            }
-        })
+        }
+        require("nvim-tree").setup(config)
     end
 }

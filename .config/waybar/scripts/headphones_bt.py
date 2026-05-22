@@ -22,7 +22,7 @@ def parseResponseAsDict( stdout : str ):
 
 def main():
     try:
-        res = subprocess.run( [ "bluetoothctl", "info"], capture_output=True, text=True, check=True )
+        res = subprocess.run( "echo info | bluetoothctl", shell=True, capture_output=True, text=True, check=True )
         devices = parseResponseAsDict( res.stdout )
         for _, info in devices.items():
             if "Galaxy Buds Pro" in info["Name"] and info["Connected"]:
